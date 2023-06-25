@@ -1,7 +1,7 @@
 # ✨Examen Jooy Car✨
 > Este repositorio contiene la implementacion del examen a JooyCar
 
-Para ejecutar el proyecto se debe actulizar la variable de entorno de la direccion de la base de datos de Mongo, un ejemplo default de configuracion esta en ```sh.env-example```
+Para ejecutar el proyecto se debe actulizar la variable de entorno de la direccion de la base de datos de Mongo, un ejemplo default de configuracion esta en ```.env-example```
 
 Por ultimo ejecutar docker en la terminal
 docker-compose up
