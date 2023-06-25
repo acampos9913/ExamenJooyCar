@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "0fc24869-d01e-403c-abf1-7632f4e8d385",
+		"name": "trips joycar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22796454",
+		"_collection_link": "https://lively-meadow-12313.postman.co/workspace/My-Workspace~8c652f4b-075f-428b-8297-de370f7dd36d/collection/22796454-0fc24869-d01e-403c-abf1-7632f4e8d385?action=share&creator=22796454&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "trips",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:505/api/trips/v1?start_gte=1642500462000&start_lte=1642500462000&distance_gte=0&limit=1&offset=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "505",
+					"path": [
+						"api",
+						"trips",
+						"v1"
+					],
+					"query": [
+						{
+							"key": "start_gte",
+							"value": "1642500462000"
+						},
+						{
+							"key": "start_lte",
+							"value": "1642500462000"
+						},
+						{
+							"key": "distance_gte",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "trips",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"readings\": [\r\n    {\r\n      \"time\": 1642500462000,\r\n      \"speed\": 9,\r\n      \"speedLimit\": 38,\r\n      \"location\": {\r\n        \"lat\": -33.580158,\r\n        \"lon\": -70.567227\r\n      }\r\n    },\r\n    {\r\n      \"time\": 1642500466000,\r\n      \"speed\": 26,\r\n      \"speedLimit\": 38,\r\n      \"location\": {\r\n        \"lat\": -33.58013,\r\n        \"lon\": -70.566995\r\n      }\r\n    },\r\n    {\r\n      \"time\": 1642500470000,\r\n      \"speed\": 28,\r\n      \"speedLimit\": 38,\r\n      \"location\": {\r\n        \"lat\": -33.580117,\r\n        \"lon\": -70.566633\r\n      }\r\n    },\r\n    {\r\n      \"time\": 1642500474000,\r\n      \"speed\": 13,\r\n      \"speedLimit\": 38,\r\n      \"location\": {\r\n        \"lat\": -33.580078,\r\n        \"lon\": -70.566408\r\n      }\r\n    },\r\n    {\r\n      \"time\": 1642500478000,\r\n      \"speed\": 18,\r\n      \"speedLimit\": 38,\r\n      \"location\": {\r\n        \"lat\": -33.580005,\r\n        \"lon\": -70.566498\r\n      }\r\n    },\r\n    {\r\n      \"time\": 1642500482000,\r\n      \"speed\": 32,\r\n      \"speedLimit\": 38,\r\n      \"location\": {\r\n        \"lat\": -33.58002,\r\n        \"lon\": -70.566837\r\n      }\r\n    },\r\n    {\r\n      \"time\": 1642500486000,\r\n      \"speed\": 38,\r\n      \"speedLimit\": 38,\r\n      \"location\": {\r\n        \"lat\": -33.580038,\r\n        \"lon\": -70.567265\r\n      }\r\n    },\r\n    {\r\n      \"time\": 1642500490000,\r\n      \"speed\": 38,\r\n      \"speedLimit\": 38,\r\n      \"location\": {\r\n        \"lat\": -33.580043,\r\n        \"lon\": -70.56773\r\n      }\r\n    },\r\n    {\r\n      \"time\": 1642500494000,\r\n      \"speed\": 35,\r\n      \"speedLimit\": 38,\r\n      \"location\": {\r\n        \"lat\": -33.580048,\r\n        \"lon\": -70.56817\r\n      }\r\n    },\r\n    {\r\n      \"time\": 1642500498000,\r\n      \"speed\": 20,\r\n      \"speedLimit\": 38,\r\n      \"location\": {\r\n        \"lat\": -33.580053,\r\n        \"lon\": -70.568502\r\n      }\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:505/api/trips/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "505",
+					"path": [
+						"api",
+						"trips",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
