@@ -1,0 +1,9 @@
+version: "3"
+services:
+  app:
+    container_name: app
+    image: dockerfile
+    restart: always
+    build: .
+    ports:
+      - "505:505"

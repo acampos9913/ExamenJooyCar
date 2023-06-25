@@ -1,0 +1,522 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Jooycar Test API",
+    "contact": {
+      "name": "API Test",
+      "url": "https://support.jooycar.com",
+      "email": "it@jooycar.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "",
+      "description": "SwaggerHub API Auto Mocking"
+    }
+  ],
+  "paths": {
+    "/api/trips/v1": {
+      "get": {
+        "tags": [
+          "Trips"
+        ],
+        "summary": "Get the trips list",
+        "description": "Get the trips list. The examples are for information only, they do not present real data.",
+        "parameters": [
+          {
+            "name": "start_gte",
+            "in": "query",
+            "description": "down filter for the trip start",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "nullable": true
+            }
+          },
+          {
+            "name": "start_lte",
+            "in": "query",
+            "description": "up filter for the trip start",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "nullable": true
+            }
+          },
+          {
+            "name": "distance_gte",
+            "in": "query",
+            "description": "down filter for the trip distance",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "nullable": true
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of trips to retrieve",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "number",
+              "nullable": true,
+              "default": 20
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of trips to retrieve",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "number",
+              "nullable": true,
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TripList"
+                },
+                "example": {
+                  "trips": [
+                    {
+                      "id": "5efc0d7da7076973f1515120",
+                      "start": {
+                        "time": 1642539928000,
+                        "lat": -33.580158,
+                        "lon": -70.567227,
+                        "address": "Avenida Apoquindo 291"
+                      },
+                      "end": {
+                        "time": 1642541428000,
+                        "lat": -33.580462,
+                        "lon": -70.567177,
+                        "address": "Avenida Grecia 1043"
+                      },
+                      "distance": 10.4,
+                      "duration": 1500000,
+                      "overspeedsCount": 2,
+                      "boundingBox": [
+                        {
+                          "lat": -33.580462,
+                          "lon": -70.567177
+                        },
+                        {
+                          "lat": -33.580432,
+                          "lon": -70.567147
+                        },
+                        {
+                          "lat": -33.580432,
+                          "lon": -70.567147
+                        },
+                        {
+                          "lat": -33.580433,
+                          "lon": -70.567144
+                        }
+                      ]
+                    },
+                    {
+                      "id": "5efc0d7da7076973f1515120",
+                      "start": {
+                        "time": 1642541528000,
+                        "lat": -33.543158,
+                        "lon": -70.553227,
+                        "address": "Avenida La Florida 923"
+                      },
+                      "end": {
+                        "time": 1642541828000,
+                        "lat": -33.580542,
+                        "lon": -70.554177,
+                        "address": "Avenida El Peñón 65"
+                      },
+                      "distance": 4.5,
+                      "duration": 300000,
+                      "overspeedsCount": 0,
+                      "boundingBox": [
+                        {
+                          "lat": -33.580462,
+                          "lon": -70.567177
+                        },
+                        {
+                          "lat": -33.580432,
+                          "lon": -70.567147
+                        },
+                        {
+                          "lat": -33.580432,
+                          "lon": -70.567147
+                        },
+                        {
+                          "lat": -33.580433,
+                          "lon": -70.567144
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Trips"
+        ],
+        "summary": "Create a new trip",
+        "description": "Create a new trip. The examples are for information only, they do not present real data.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReadingList"
+              },
+              "example": {
+                "readings": [
+                  {
+                    "time": 1642500462000,
+                    "speed": 9,
+                    "speedLimit": 38,
+                    "location": {
+                      "lat": -33.580158,
+                      "lon": -70.567227
+                    }
+                  },
+                  {
+                    "time": 1642500466000,
+                    "speed": 26,
+                    "speedLimit": 38,
+                    "location": {
+                      "lat": -33.58013,
+                      "lon": -70.566995
+                    }
+                  },
+                  {
+                    "time": 1642500470000,
+                    "speed": 28,
+                    "speedLimit": 38,
+                    "location": {
+                      "lat": -33.580117,
+                      "lon": -70.566633
+                    }
+                  },
+                  {
+                    "time": 1642500474000,
+                    "speed": 13,
+                    "speedLimit": 38,
+                    "location": {
+                      "lat": -33.580078,
+                      "lon": -70.566408
+                    }
+                  },
+                  {
+                    "time": 1642500478000,
+                    "speed": 18,
+                    "speedLimit": 38,
+                    "location": {
+                      "lat": -33.580005,
+                      "lon": -70.566498
+                    }
+                  },
+                  {
+                    "time": 1642500482000,
+                    "speed": 32,
+                    "speedLimit": 38,
+                    "location": {
+                      "lat": -33.58002,
+                      "lon": -70.566837
+                    }
+                  },
+                  {
+                    "time": 1642500486000,
+                    "speed": 38,
+                    "speedLimit": 38,
+                    "location": {
+                      "lat": -33.580038,
+                      "lon": -70.567265
+                    }
+                  },
+                  {
+                    "time": 1642500490000,
+                    "speed": 38,
+                    "speedLimit": 38,
+                    "location": {
+                      "lat": -33.580043,
+                      "lon": -70.56773
+                    }
+                  },
+                  {
+                    "time": 1642500494000,
+                    "speed": 35,
+                    "speedLimit": 38,
+                    "location": {
+                      "lat": -33.580048,
+                      "lon": -70.56817
+                    }
+                  },
+                  {
+                    "time": 1642500498000,
+                    "speed": 20,
+                    "speedLimit": 38,
+                    "location": {
+                      "lat": -33.580053,
+                      "lon": -70.568502
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Trip"
+                },
+                "example": {
+                  "id": "5efc0d7da7076973f1515120",
+                  "start": {
+                    "time": 1642500462000,
+                    "lat": -33.580158,
+                    "lon": -70.567227,
+                    "address": "Avenida Apoquindo 291"
+                  },
+                  "end": {
+                    "time": 1642500498000,
+                    "lat": -33.580053,
+                    "lon": -70.568502,
+                    "address": "Avenida Grecia 1043"
+                  },
+                  "distance": 1.2,
+                  "duration": 36000,
+                  "overspeedsCount": 1,
+                  "boundingBox": [
+                    {
+                      "lat": -33.580462,
+                      "lon": -70.567177
+                    },
+                    {
+                      "lat": -33.580432,
+                      "lon": -70.567147
+                    },
+                    {
+                      "lat": -33.580432,
+                      "lon": -70.567147
+                    },
+                    {
+                      "lat": -33.580433,
+                      "lon": -70.567144
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Reading": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "integer",
+            "description": "timestamp of the reading"
+          },
+          "location": {
+            "$ref": "#/components/schemas/Reading_location"
+          },
+          "speed": {
+            "type": "integer",
+            "description": "speed of the reading"
+          },
+          "speedLimit": {
+            "type": "integer",
+            "description": "speed limit for the reading location"
+          }
+        }
+      },
+      "Trip": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "trip id"
+          },
+          "start": {
+            "$ref": "#/components/schemas/Trip_start"
+          },
+          "end": {
+            "$ref": "#/components/schemas/Trip_end"
+          },
+          "distance": {
+            "type": "number",
+            "description": "distance of the trip in kilometers"
+          },
+          "duration": {
+            "type": "integer",
+            "description": "duration of the trips in minutes"
+          },
+          "overspeedsCount": {
+            "type": "integer",
+            "description": "count of overspeeds in the trip"
+          },
+          "boundingBox": {
+            "type": "array",
+            "description": "the bounding box of the trip",
+            "items": {
+              "$ref": "#/components/schemas/Trip_boundingBox"
+            }
+          }
+        }
+      },
+      "ReadingList": {
+        "type": "object",
+        "properties": {
+          "readings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Reading"
+            }
+          }
+        }
+      },
+      "TripList": {
+        "type": "object",
+        "properties": {
+          "trips": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Trip"
+            }
+          }
+        }
+      },
+      "ValidationError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ValidationError_error"
+          }
+        }
+      },
+      "Reading_location": {
+        "type": "object",
+        "properties": {
+          "lat": {
+            "type": "number"
+          },
+          "lon": {
+            "type": "number"
+          }
+        },
+        "description": "latitude and longitude of the reading"
+      },
+      "Trip_start": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "integer"
+          },
+          "lat": {
+            "type": "number"
+          },
+          "lon": {
+            "type": "number"
+          },
+          "address": {
+            "type": "string"
+          }
+        },
+        "description": "trip start data"
+      },
+      "Trip_end": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "integer"
+          },
+          "lat": {
+            "type": "number"
+          },
+          "lon": {
+            "type": "number"
+          },
+          "address": {
+            "type": "string"
+          }
+        },
+        "description": "trip end data"
+      },
+      "Trip_boundingBox": {
+        "type": "object",
+        "properties": {
+          "lat": {
+            "type": "number"
+          },
+          "lon": {
+            "type": "number"
+          }
+        }
+      },
+      "ValidationError_error": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "description": "HTTP Status Code",
+            "format": "int32"
+          },
+          "errorCode": {
+            "type": "integer",
+            "description": "Business Error Code (optional)",
+            "format": "int32"
+          },
+          "srcMessage": {
+            "type": "string",
+            "description": "Error description (en_US)",
+            "example": "Invalid attribute"
+          },
+          "translatedMessage": {
+            "type": "string",
+            "description": "Translated error description",
+            "example": "Atributo inválido"
+          }
+        },
+        "description": "Given attributes are invalid for requested action"
+      }
+    }
+  }
+}
